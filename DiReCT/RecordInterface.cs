@@ -8,11 +8,11 @@ namespace DiReCT
 {
         //each types of disaster interface
         //implement IRecord method in each class
-        interface DeisasterInterface
+        interface IDisaster
         {
-            void IRecord();
+            void Record();
         }
-        public class LandslideRecord : DisasterInterface
+        public class LandslideRecord : IDisaster
         {
             
            enum LandslideDamage
@@ -21,13 +21,13 @@ namespace DiReCT
               Medium,
               Severe
            }
-           public void IRecord()
+           public void Record()
            {
 
            }
         }
-        
-        public class FloodRecord : DisasterInterface
+
+        public class FloodRecord : IDisaster
         {
             enum Height
             {
@@ -37,12 +37,12 @@ namespace DiReCT
                 WaistHigh
             };
 
-            public void IRecord()
+            public void Record()
             {
 
             }
         }
-        public class FireRecord : DisasterInterface
+        public class FireRecord : IDisaster
         {
             enum FireDamage
             {
@@ -50,7 +50,7 @@ namespace DiReCT
                 Medium,
                 Severe
             }
-            public void IRecord()
+            public void Record()
             {
 
             }
