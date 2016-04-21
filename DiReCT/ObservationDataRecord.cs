@@ -8,10 +8,9 @@ namespace DiReCT
 		// It is a combination of identifiers of disaster type,
 		// disaster name, recorder name, time and date, and so on.
 		public string UID{ get; protected set; }
-
         // Time class to be done.
         // Location class to be done.
-        //Effected ared to be done
+        // Effected area to be done
         private string recorderID;
         private string recorderOrganization;
         private string device;
