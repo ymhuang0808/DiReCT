@@ -8,10 +8,28 @@ using System.Diagnostics;
 namespace DiReCT
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    [Record("Flood001","Flood","2016/02/12","Taipei",2,1,"Jeff","IIS","Ipad2", "Flooding of inter state 280 NorthBound off ramp reported. ")]
+    // [Record("Flood001","Flood","2016/02/12","Taipei",2,1,"Jeff","IIS","Ipad2", "Flooding of inter state 280 NorthBound off ramp reported. ")]
     public class RecordAttribute : Attribute
     {
-        public RecordAttribute(string name, string type, string date, string area, int deaths, int injuries, string recorder, string org, string device, string narrative)
+        public RecordAttribute()
+        {
+
+        }
+    }
+    public class RecorderAttribute : Attribute
+    {
+
+        public RecorderAttribute()
+        {
+
+        }
+    }
+    public class AdviceAttibute : Attribute
+    {
+
+    }
+}
+     /*   public RecordAttribute(string name, string type, string date, string area, int deaths, int injuries, string recorder, string org, string device, string narrative)
         {
             this.DisasterName = name;
             this.DisasterType = type;
@@ -24,6 +42,7 @@ namespace DiReCT
             this.RecorderOrganization = org;
             this.Device = device;                     
         }
+        
             //Record Metadata
             public string DisasterName { get; set; }
             public string DisasterType { get; set; }
@@ -40,5 +59,5 @@ namespace DiReCT
             public string Device { get; set; }
         
 
-    }
-}
+    }*/
+
