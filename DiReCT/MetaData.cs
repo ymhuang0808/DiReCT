@@ -19,16 +19,16 @@ namespace DiReCT
     // 一個自訂的 attribute 能允許目標物定義一個 type (繼承 Attribute 類別)
     public class DisasterTypeAttribute : Attribute
     {
-        // 當這個 attribute 被設定時，這個建構子(constructor)會被呼叫
+        // constructor
         public DisasterTypeAttribute(Disaster type)
         {
             theType = type;
         }
 
-        // 設定一個內部的變數
+        // 內部變數
         protected Disaster theType;
 
-        // 設定一個公開的屬性...
+        // 公開的屬性
         public Disaster Type
         {
             get { return theType; }
@@ -49,10 +49,10 @@ namespace DiReCT
         public void FireMethod() { }
     }
 
-    //以下示範如何使用 attribute
+    
     class DemoClass
     {
-        //以下用 Console 模式下運作
+        
         static void Main(string[] args)
         {
             DisasterTypeTestClass testClass = new DisasterTypeTestClass();
