@@ -37,7 +37,7 @@ namespace DiReCT
     }
 
     // 一個測試類別，在每個方法上都定義一個它屬於的 type
-    class DisasterlTypeTestClass
+    class DisasterTypeTestClass
     {
         [DisasterType(Disaster.Flood)]
         public void FloodMethod() { }
@@ -55,7 +55,7 @@ namespace DiReCT
         //以下用 Console 模式下運作
         static void Main(string[] args)
         {
-            DisasterlTypeTestClass testClass = new DisasterlTypeTestClass();
+            DisasterTypeTestClass testClass = new DisasterTypeTestClass();
             Type type = testClass.GetType();
 
             // 將 DisasterTypeTestClass 的方法透過 foreach 全部取出
