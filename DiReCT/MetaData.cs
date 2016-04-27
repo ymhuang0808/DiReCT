@@ -7,57 +7,74 @@ using System.Diagnostics;
 
 namespace DiReCT
 {
-    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    // [Record("Flood001","Flood","2016/02/12","Taipei",2,1,"Jeff","IIS","Ipad2", "Flooding of inter state 280 NorthBound off ramp reported. ")]
-    public class RecordAttribute : Attribute
+    // An enumeration of disasters. Start at 1 (0 = uninitialized).
+    public enum Disaster
     {
-        public RecordAttribute()
-        {
+        // Disasters
+        Flood = 1,
+        Landslide,
+        Fire,
+    }
 
+    // 一個自訂的 attribute 能允許目標物定義一個 type (繼承 Attribute 類別)
+    public class DisasterTypeAttribute : Attribute
+    {
+        // 當這個 attribute 被設定時，這個建構子(constructor)會被呼叫
+        public DisasterTypeAttribute(Disaster type)
+        {
+            theType = type;
+        }
+
+        // 設定一個內部的變數
+        protected Disaster theType;
+
+        // 設定一個公開的屬性...
+        public Disaster Type
+        {
+            get { return theType; }
+            set { theType = Type; }
         }
     }
-    public class RecorderAttribute : Attribute
+
+    // 一個測試類別，在每個方法上都定義一個它屬於的 type
+    class DisasterlTypeTestClass
     {
+        [DisasterType(Disaster.Flood)]
+        public void FloodMethod() { }
 
-        public RecorderAttribute()
-        {
+        [DisasterType(Disaster.Landslide)]
+        public void Landslidemethod() { }
 
-        }
+        [DisasterType(Disaster.Fire)]
+        public void FireMethod() { }
     }
-    public class AdviceAttibute : Attribute
-    {
 
+    //以下示範如何使用 attribute
+    class DemoClass
+    {
+        //以下用 Console 模式下運作
+        static void Main(string[] args)
+        {
+            DisasterlTypeTestClass testClass = new DisasterlTypeTestClass();
+            Type type = testClass.GetType();
+
+            // 將 DisasterTypeTestClass 的方法透過 foreach 全部取出
+            foreach (MethodInfo mInfo in type.GetMethods())
+            {
+                // 將每一個 function 透過 foreach 取得 attribute 的集合
+                foreach (Attribute attr in
+                    Attribute.GetCustomAttributes(mInfo))
+                {
+                    // 檢查是否為 DisasterType 的資料型態如果是將它列印出來
+                    if (attr.GetType() == typeof(DisasterTypeAttribute))
+                        Console.WriteLine(
+                            "Method {0} has a type {1} attribute.",
+                            mInfo.Name, ((DisasterTypeAttribute)attr).Type);
+                }
+
+            }
+        }
     }
 }
-     /*   public RecordAttribute(string name, string type, string date, string area, int deaths, int injuries, string recorder, string org, string device, string narrative)
-        {
-            this.DisasterName = name;
-            this.DisasterType = type;
-            this.DisasterArea = area;
-            this.DisasterDate = date;
-            this.DisasterDeaths = deaths;
-            this.DisasterInjuries = injuries;
-            this.DisasterNarrative = narrative;
-            this.Recorder = recorder;
-            this.RecorderOrganization = org;
-            this.Device = device;                     
-        }
-        
-            //Record Metadata
-            public string DisasterName { get; set; }
-            public string DisasterType { get; set; }
-            //a referece from CAP 
-            //"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d"/
-            public string DisasterDate { get; set; }
-            public string DisasterArea { get; set; }
-            public int DisasterDeaths { get; set; }
-            public int DisasterInjuries { get; set; }
-            public string DisasterNarrative { get; set; }
-            //Recorder Metadata
-            public string Recorder { get; set; }
-            public string RecorderOrganization { get; set; }
-            public string Device { get; set; }
-        
 
-    }*/
 
