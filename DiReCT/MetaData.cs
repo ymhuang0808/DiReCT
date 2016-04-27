@@ -16,7 +16,8 @@ namespace DiReCT
         Landslide,
         Fire,
     }
-
+    
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     // 一個自訂的 attribute 能允許目標物定義一個 type (繼承 Attribute 類別)
     public class DisasterTypeAttribute : Attribute
     {
@@ -25,10 +26,8 @@ namespace DiReCT
         {
             theType = type;
         }
-
         // 內部變數
         protected Disaster theType;
-
         // 公開的屬性
         public Disaster Type
         {
