@@ -17,8 +17,8 @@ namespace DiReCT
         Fire,
     }
     
+    // Metadata of disaster type
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    // 一個自訂的 attribute 能允許目標物定義一個 type (繼承 Attribute 類別)
     public class DisasterTypeAttribute : Attribute
     {
         // constructor
@@ -26,53 +26,70 @@ namespace DiReCT
         {
             theType = type;
         }
-        // 內部變數
         protected Disaster theType;
-        // 公開的屬性
         public Disaster Type
         {
             get { return theType; }
             set { theType = Type; }
         }
     }
-
-    // 一個測試類別，在每個方法上都定義一個它屬於的 type
-    class DisasterTypeTestClass
-    {
-        [DisasterType(Disaster.Flood)]
-        public void FloodMethod() { }
-
-        [DisasterType(Disaster.Landslide)]
-        public void Landslidemethod() { }
-
-        [DisasterType(Disaster.Fire)]
-        public void FireMethod() { }
-    }
-
     
-    class DemoClass
+    // Metadata of disaster data
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class DisasterNameAttribute : Attribute
     {
-        
-        static void Main(string[] args)
+        private string name;
+        private string id;
+
+        public DisasterNameAttribute(string name, string id)
         {
-            DisasterTypeTestClass testClass = new DisasterTypeTestClass();
-            Type type = testClass.GetType();
+            this.name = name;
+            this.id = id;
+        }
+        public string Name
+        { get; set; }
+        public string ID
+        { get; set; }
+    }
+    /*
+    Metadata of disaster area
+    Metadata of disaster date
+    
+        to be done.
+    */
+    
+    // Metadata of recorder
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class RecorderAttribute : Attribute
+    {
+        private string name;
+        private string organization;
 
-            // 將 DisasterTypeTestClass 的方法透過 foreach 全部取出
-            foreach (MethodInfo mInfo in type.GetMethods())
-            {
-                // 將每一個 function 透過 foreach 取得 attribute 的集合
-                foreach (Attribute attr in
-                    Attribute.GetCustomAttributes(mInfo))
-                {
-                    // 檢查是否為 DisasterType 的資料型態如果是將它列印出來
-                    if (attr.GetType() == typeof(DisasterTypeAttribute))
-                        Console.WriteLine(
-                            "Method {0} has a type {1} attribute.",
-                            mInfo.Name, ((DisasterTypeAttribute)attr).Type);
-                }
-
-            }
+        public RecorderAttribute(string name, string org)
+        {
+            this.name = name;
+            this.organization = org;
+        }
+        public string Name
+        { get; set; }
+        public string Organization
+        { get; set; } 
+    }
+    
+    //Metadata of device
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class DeviceAttribute : Attribute
+    {
+        // constructor
+        public DeviceAttribute(String id)
+        {
+            this.id = id;
+        }
+        protected String id;
+        public String DeviceID
+        {
+            get { return id; }
+            set { id = DeviceID; }
         }
     }
 }
