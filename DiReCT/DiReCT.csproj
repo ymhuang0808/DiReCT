@@ -39,6 +39,7 @@
     <Compile Include="LandsideRecord.cs" />
     <Compile Include="FloodRecord.cs" />
     <Compile Include="FireRecord.cs" />
+    <Compile Include="ObservationRecordMetadata.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
