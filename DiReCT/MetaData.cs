@@ -8,6 +8,13 @@ using System.Reflection;
 
 namespace DiReCT
 {
+     public enum Disaster
+    {
+        // Disasters
+        Flood = 1,
+        Landslide,
+        Fire,
+    }
     // Metadata of disaster type
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class DisasterTypeAttribute : Attribute
