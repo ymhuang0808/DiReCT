@@ -1,13 +1,13 @@
 ﻿/**
  * 
- * FireRecord.cs is the class for "Fire Record" in the DiReCT
+ * FireRecord.cs is the class for "Fire Record" in the DiReCT.ObjectModel.Observations
  * project. 
  * 
  * Copyright (c) 2016 DRBoaST
  * 
  * Project Name:
  * 
- * 		DiReCT(Disaster Record Capture Tool)
+ * 		DiReCT.ObjectModel.Observations(Disaster Record Capture Tool)
  * 
  * Version:
  * 
@@ -39,15 +39,15 @@
 
 using System;
 
-namespace DiReCT
+namespace DiReCT.ObjectModel.Observations
 {
-	public class FireRecord : ObservationDataRecord
+	public class Fire : Record
 	{
 		//Constrants
 		public const string disasterType = "Fire";
 
 		// Public constructor.
-		public FireRecord (string disasterName, string recorderName, string recordTime)
+		public Fire (string disasterName, string recorderName, string recordTime)
 		{
 			this.DisasterName = disasterName;
 			this.DisasterType = disasterType;

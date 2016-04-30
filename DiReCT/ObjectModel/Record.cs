@@ -1,13 +1,13 @@
 ﻿/**
  * 
- * ObservationDataRecord.cs is the abstract class for "Record" in the DiReCT
+ * ObservationDataRecord.cs is the abstract class for "Record" in the DiReCT.ObjectModel.Observations
  * project. 
  * 
  * Copyright (c) 2016 DRBoaST
  * 
  * Project Name:
  * 
- * 		DiReCT(Disaster Record Capture Tool)
+ * 		DiReCT.ObjectModel.Observations(Disaster Record Capture Tool)
  * 
  * Version:
  * 
@@ -40,10 +40,10 @@
 
 using System;
 
-namespace DiReCT
+namespace DiReCT.ObjectModel.Observations
 {
 
-	public abstract class ObservationDataRecord
+	public abstract class Record
 	{
 
 		// This Auto-property is a identifier of the Record.
@@ -77,7 +77,7 @@ namespace DiReCT
 		}
 
 		// Pointer to ObservationRecordMetadata
-		public ObservationRecordMetadata ObservationRecordMetadata;
+		public Metadata ObservationRecordMetadata;
 
 		public class Observations
 		{

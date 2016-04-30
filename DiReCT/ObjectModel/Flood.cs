@@ -1,13 +1,13 @@
 ﻿/**
  * 
- * FloodRecord.cs is the class for "Flood Record" in the DiReCT
+ * FloodRecord.cs is the class for "Flood Record" in the DiReCT.ObjectModel.Observations
  * project. 
  * 
  * Copyright (c) 2016 DRBoaST
  * 
  * Project Name:
  * 
- * 		DiReCT(Disaster Record Capture Tool)
+ * 		DiReCT.ObjectModel.Observations(Disaster Record Capture Tool)
  * 
  * Version:
  * 
@@ -38,15 +38,15 @@
  */
 using System;
 
-namespace DiReCT
+namespace DiReCT.ObjectModel.Observations
 {
-	public class FloodRecord : ObservationDataRecord
+	public class Flood : Record
 	{
 		//Constrants
 		public const string disasterType = "Flood";
 
 		// Public constructor.
-		public FloodRecord (string disasterName, string recorderName, string recordTime)
+		public Flood (string disasterName, string recorderName, string recordTime)
 		{
 			this.DisasterName = disasterName;
 			this.DisasterType = disasterType;

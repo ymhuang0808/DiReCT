@@ -1,13 +1,13 @@
 ﻿/**
  * 
- * LandsideRecord.cs is the class for "Landside Record" in the DiReCT
+ * LandsideRecord.cs is the class for "Landside Record" in the DiReCT.ObjectModel.Observations
  * project. 
  * 
  * Copyright (c) 2016 DRBoaST
  * 
  * Project Name:
  * 
- * 		DiReCT(Disaster Record Capture Tool)
+ * 		DiReCT.ObjectModel.Observations(Disaster Record Capture Tool)
  * 
  * Version:
  * 
@@ -39,15 +39,15 @@
 
 using System;
 
-namespace DiReCT
+namespace DiReCT.ObjectModel.Observations
 {
-	public class LandsideRecord : ObservationDataRecord
+	public class Landside : Record
 	{
 		//Constrants
 		public const string disasterType = "Landside";
 
 		// Public constructor.
-		public LandsideRecord (string disasterName, string recorderName, string recordTime)
+		public Landside (string disasterName, string recorderName, string recordTime)
 		{
 			this.DisasterName = disasterName;
 			this.DisasterType = disasterType;
