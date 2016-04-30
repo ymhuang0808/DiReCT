@@ -1,4 +1,5 @@
 ﻿using System;
+using DiReCT.ObjectModel.Observations;
 
 namespace DiReCT
 {
@@ -8,15 +9,14 @@ namespace DiReCT
 		{
 			string now = GetTimestamp (DateTime.Now);
 
-			FireRecord fire = new FireRecord ("momo", "Johnson", now);
-			FloodRecord flood = new FloodRecord ("YOKOHAMA", "Jeff", now);
-			LandsideRecord Landside = new LandsideRecord ("JakeLee", "YM", now);
+			Fire fireRecord = new Fire ("TaipeiStationFire", "Jim", now);
+			Flood floodRecord = new Flood ("PuliFlood", "JohnsonS", now);
+			Landside landsideRecord = new Landside ("ShiaoLinlandside", "JohnsonH", now);
 
-			Console.WriteLine ("Hello World!");
-			Console.WriteLine (fire.UID);
-			Console.WriteLine (flood.UID);
-			Console.WriteLine (Landside.UID);
-
+			Console.WriteLine ("Call fire.UID    => {0}", fireRecord.UID);
+			Console.WriteLine ("Call flood.UID   => {0}", floodRecord.UID);
+			Console.WriteLine ("Call lanside.UID => {0}", landsideRecord.UID);
+            Console.ReadLine();
 
 		}
 
