@@ -18,8 +18,8 @@ namespace DiReCT.ObjectModel.Observations
                 {
                     return type;
                 }
-             }
-          }
+            }
+        }
         public class DisasterName : Attribute
         {
             private string name;
@@ -37,17 +37,40 @@ namespace DiReCT.ObjectModel.Observations
         }
         public class DisasterDuration : Attribute
         {
-		// to be done.
+            public DateTime time;
+            public DisasterDuration(DateTime time)
+            {
+                this.time = time;
+            }
+            public DateTime Time
+            {
+                get
+                {
+                    return time;
+                }
+            }
+            // Time duration function to be done.
         }
         public class DisasterLocation : Attribute
         {
-		// to be done.
+            private string area;
+            public DisasterLocation(string area)
+            {
+                this.area = area;
+            }
+            public string Area
+            {
+                get
+                {
+                    return area;
+                }
+            }
         }
         public class RecorderName : Attribute
         {
             private string name;
             public RecorderName(string name)
-            { 
+            {
                 this.name = name;
             }
             public string Name
