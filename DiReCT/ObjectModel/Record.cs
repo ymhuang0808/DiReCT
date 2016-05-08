@@ -65,15 +65,13 @@ namespace DiReCT.ObjectModel.Observations
 
 		// This Location object is a Struct(value-type) object
 		// It contains longitude, Latitude and Altitude members.
-		// We choose the float type for high-accuracy purpose.
-		// See http://goo.gl/uPSBiU a good explanation to accuracy.
 		public struct Location
 		{
-			public float Longitude{ get; set; }
+			public double Longitude{ get; set; }
 
-			public float Latitude{ get; set; }
+			public double Latitude{ get; set; }
 
-			public float Altitude{ get; set; }
+			public double Altitude{ get; set; }
 		}
 
 		// Pointer to ObservationRecordMetadata
