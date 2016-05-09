@@ -53,11 +53,8 @@ namespace DiReCT.ObjectModel.Observations
 			this.DisasterType = disasterType;
 			this.RecorderName = recorderName;
 			this.RecordTime = recordTime;
-
 			SetUID ();
 		}
-
-
 	}
 }
 
