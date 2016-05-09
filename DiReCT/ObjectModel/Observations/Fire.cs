@@ -49,13 +49,13 @@ namespace DiReCT.ObjectModel.Observations
 
         // Public constructor.
         public Fire(
-            string disasterName, 
-            string recorderName, 
-            string recordTime, 
-            MRecord MRecord, 
+            string disasterName,
+            string recorderName,
+            string recordTime,
+            MRecord MRecord,
             MRecorder MRecorder
             ) : base(
-                MRecord, 
+                MRecord,
                 MRecorder)
         {
             MRecord.DisasterName = disasterName;

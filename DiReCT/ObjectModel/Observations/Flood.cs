@@ -41,10 +41,10 @@ using DiReCT.ObjectModel.Metadata;
 
 namespace DiReCT.ObjectModel.Observations
 {
-	public class Flood : Record
-	{
-		//Constrants
-		public const string disasterType = "Flood";
+    public class Flood : Record
+    {
+        //Constrants
+        public const string disasterType = "Flood";
 
         // Public constructor.
         public Flood(
@@ -54,7 +54,7 @@ namespace DiReCT.ObjectModel.Observations
            MRecord MRecord,
            MRecorder MRecorder
            ) : base(
-                MRecord, 
+                MRecord,
                 MRecorder)
         {
             MRecord.DisasterName = disasterName;
