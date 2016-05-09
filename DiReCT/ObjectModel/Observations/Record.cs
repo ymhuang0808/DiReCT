@@ -39,6 +39,7 @@
  */
 
 using System;
+using DiReCT.ObjectModel.Metadata;
 
 namespace DiReCT.ObjectModel.Observations
 {
@@ -50,15 +51,6 @@ namespace DiReCT.ObjectModel.Observations
 		// It is a combination of identifiers of disaster type,
 		// disaster name, recorder name, time and date, and so on.
 		public string UID{ get; protected set; }
-
-		// This Auto-property is a disaster name of the Record.
-		public string DisasterName{ get; set; }
-
-		// This Auto-property is a disaster type of the Record.
-		public string DisasterType{ get; set; }
-
-		// This Auto-property is a recorder name of the Record.
-		public string RecorderName{ get; set; }
 
 		// This Auto-property is a record time of the Record.
 		public string RecordTime{ get; set; }
@@ -74,10 +66,14 @@ namespace DiReCT.ObjectModel.Observations
 			public double Altitude{ get; set; }
 		}
 
-		// Pointer to ObservationRecordMetadata
-		public Metadata ObservationRecordMetadata;
+        // Pointer to MetadataRecord
+        public MRecord MRecord;
 
-		public class Observations
+        // Pointer to MetadataRecorder
+
+        public MRecorder MRecorder;
+
+        public class Observations
 		{
 			// To-Do 
 		}
@@ -85,9 +81,17 @@ namespace DiReCT.ObjectModel.Observations
 		// This function is used to combine the UID.
 		public void SetUID ()
 		{
-			this.UID = this.DisasterType + "-" + this.DisasterName + "-" + this.RecorderName + "-" + this.RecordTime;
+			this.UID = MRecord.DisasterType + "-" + MRecord.DisasterName + "-" + MRecorder.Name + "-" + this.RecordTime;
 
 		}
+
+        public Record(
+            MRecord MRecord,
+            MRecorder MRecorder
+            ) {
+            this.MRecord = MRecord;
+            this.MRecorder = MRecorder;
+        }
 
 	}
 }

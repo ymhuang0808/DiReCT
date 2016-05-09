@@ -38,6 +38,7 @@
  */
 
 using System;
+using DiReCT.ObjectModel.Metadata;
 
 namespace DiReCT.ObjectModel.Observations
 {
@@ -46,18 +47,27 @@ namespace DiReCT.ObjectModel.Observations
 		//Constrants
 		public const string disasterType = "Landside";
 
-		// Public constructor.
-		public Landside (string disasterName, string recorderName, string recordTime)
-		{
-			this.DisasterName = disasterName;
-			this.DisasterType = disasterType;
-			this.RecorderName = recorderName;
-			this.RecordTime = recordTime;
+        // Public constructor.
+        public Landside(
+          string disasterName,
+          string recorderName,
+          string recordTime,
+          MRecord MRecord,
+          MRecorder MRecorder
+          ) : base(
+                MRecord, 
+                MRecorder)
+        {
+            MRecord.DisasterName = disasterName;
+            MRecord.DisasterType = disasterType;
+            MRecorder.Name = recorderName;
+            this.RecordTime = recordTime;
 
-			SetUID ();
-		}
+            SetUID();
+
+        }
 
 
-	}
+    }
 }
 

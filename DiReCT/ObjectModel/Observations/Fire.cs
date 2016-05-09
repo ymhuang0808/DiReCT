@@ -38,28 +38,37 @@
  */
 
 using System;
+using DiReCT.ObjectModel.Metadata;
 
 namespace DiReCT.ObjectModel.Observations
 {
-	public class Fire : Record
-	{
-		//Constrants
-		public const string disasterType = "Fire";
+    public class Fire : Record
+    {
+        //Constrants
+        public const string disasterType = "Fire";
 
-		// Public constructor.
-		public Fire (string disasterName, string recorderName, string recordTime)
-		{
-			this.DisasterName = disasterName;
-			this.DisasterType = disasterType;
-			this.RecorderName = recorderName;
-			this.RecordTime = recordTime;
+        // Public constructor.
+        public Fire(
+            string disasterName, 
+            string recorderName, 
+            string recordTime, 
+            MRecord MRecord, 
+            MRecorder MRecorder
+            ) : base(
+                MRecord, 
+                MRecorder)
+        {
+            MRecord.DisasterName = disasterName;
+            MRecord.DisasterType = disasterType;
+            MRecorder.Name = recorderName;
+            this.RecordTime = recordTime;
 
-			SetUID ();
+            SetUID();
 
-		}
+        }
 
 
-	
-	}
+
+    }
 }
 
