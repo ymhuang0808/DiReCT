@@ -1,4 +1,4 @@
-﻿/**
+﻿ /**
  * 
  * FireRecord.cs is the class for "Fire Record" in the DiReCT.ObjectModel.Observations
  * project. 
@@ -38,23 +38,31 @@
  */
 
 using System;
+using DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT.ObjectModel.Observations
+namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Observations
 {
 	public class Fire : Record
 	{
 		//Constrants
 		public const string disasterType = "Fire";
 
-		// Public constructor.
-		public Fire (string disasterName, string recorderName, string recordTime)
+        // Public constructor.
+        public Fire(
+            Disaster Disaster,
+            Recorder Recorder,
+            DateTime recordTime
+            ) : base (Disaster, Recorder)
 		{
-			this.DisasterName = disasterName;
-			this.DisasterType = disasterType;
-			this.RecorderName = recorderName;
-			this.RecordTime = recordTime;
-			SetUID ();
-		}
-	}
+            Disaster.Type = Disaster.Type;
+
+            Disaster.Name = Disaster.Name;
+            Recorder.Name = Recorder.Name;
+
+            this.CalendarTime = recordTime;
+
+            SetUID();
+        }
+    }
 }
 

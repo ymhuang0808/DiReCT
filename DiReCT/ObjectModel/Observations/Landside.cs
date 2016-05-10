@@ -38,23 +38,32 @@
  */
 
 using System;
+using DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT.ObjectModel.Observations
+namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Observations
 {
 	public class Landside : Record
 	{
 		//Constrants
 		public const string disasterType = "Landside";
 
-		// Public constructor.
-		public Landside (string disasterName, string recorderName, string recordTime)
+        // Public constructor.
+        // Public constructor.
+        public Landside(
+            Disaster Disaster,
+            Recorder Recorder,
+            DateTime recordTime
+            ) : base (Disaster, Recorder)
 		{
-			this.DisasterName = disasterName;
-			this.DisasterType = disasterType;
-			this.RecorderName = recorderName;
-			this.RecordTime = recordTime;
-			SetUID ();
-		}
-	}
+            Disaster.Type = Disaster.Type;
+
+            Disaster.Name = Disaster.Name;
+            Recorder.Name = Recorder.Name;
+
+            this.CalendarTime = recordTime;
+
+            SetUID();
+        }
+    }
 }
 

@@ -37,8 +37,9 @@
  * 
  */
 using System;
+using DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT.ObjectModel.Observations
+namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Observations
 {
 	public class Flood : Record
 	{
@@ -46,14 +47,21 @@ namespace DiReCT.ObjectModel.Observations
 		public const string disasterType = "Flood";
 
 		// Public constructor.
-		public Flood (string disasterName, string recorderName, string recordTime)
+		public Flood (
+            Disaster Disaster,
+            Recorder Recorder,
+            DateTime recordTime
+            ) : base (Disaster, Recorder)
 		{
-			this.DisasterName = disasterName;
-			this.DisasterType = disasterType;
-			this.RecorderName = recorderName;
-			this.RecordTime = recordTime;
-			SetUID ();
-		}
+            Disaster.Type = Disaster.Type;
+
+            Disaster.Name = Disaster.Name;
+            Recorder.Name = Recorder.Name;
+
+            this.CalendarTime = recordTime;
+
+            SetUID();
+        }
 	}
 }
 

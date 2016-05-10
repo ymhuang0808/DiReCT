@@ -1,5 +1,9 @@
 ﻿using System;
-using DiReCT.ObjectModel.Observations;
+using System.Device.Location;
+using System.Diagnostics;
+
+using DRBoaST.DiSRC.DiReCT.ObjectModel.Observations;
+using DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata;
 
 namespace DiReCT
 {
@@ -7,20 +11,29 @@ namespace DiReCT
 	{
 		public static void Main (string[] args)
 		{
-			string now = GetTimestamp (DateTime.Now);
+            DateTime now = DateTime.Now;
 
-			Fire fireRecord = new Fire ("TaipeiStationFire", "Jim", now);
-			Flood floodRecord = new Flood ("PuliFlood", "JohnsonS", now);
-			Landside landsideRecord = new Landside ("ShiaoLinlandside", "JohnsonH", now);
-			
-			Console.WriteLine ("Call fire.UID    => {0}", fireRecord.UID);
-			Console.WriteLine ("Call flood.UID   => {0}", floodRecord.UID);
-			Console.WriteLine ("Call lanside.UID => {0}", landsideRecord.UID);
-		}
+            Disaster disaster = new Disaster();
+            Recorder recorder = new Recorder();
 
-		public static String GetTimestamp (DateTime value)
-		{
-			return value.ToString ("yyyyMMddHHmmssffff");
-		}
+            disaster.Type = "Fire";
+            disaster.Name = "TaipeiStation";
+
+            recorder.Name = "Jeff";
+
+            Fire fireRecord = new Fire(disaster, recorder, now);
+
+            /*
+            GeoCoordinate location = new GeoCoordinate();
+            location.Longitude = 120.0000;
+            location.Latitude = 21.00010;
+            location.Altitude = 10.01;
+            */
+
+            Console.WriteLine ("Call fire.UID    => {0}", fireRecord.UID);
+            Console.ReadLine();
+
+        }
+
 	}
 }
