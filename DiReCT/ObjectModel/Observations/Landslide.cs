@@ -42,14 +42,14 @@ using DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata;
 
 namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Observations
 {
-	public class Landside : Record
+	public class Landslide : Record
 	{
 		//Constrants
-		public const string disasterType = "Landside";
+		public const string disasterType = "Landslide";
 
         // Public constructor.
         // Public constructor.
-        public Landside(
+        public Landslide(
             Disaster Disaster,
             Recorder Recorder,
             DateTime recordTime

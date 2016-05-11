@@ -43,7 +43,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ObjectModel\Observations\Record.cs" />
-    <Compile Include="ObjectModel\Observations\Landside.cs" />
+    <Compile Include="ObjectModel\Observations\Landslide.cs" />
     <Compile Include="ObjectModel\Observations\Flood.cs" />
     <Compile Include="ObjectModel\Observations\Fire.cs" />
   </ItemGroup>
