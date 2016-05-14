@@ -2,19 +2,63 @@
 
 namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata
 {
-    public class Disaster
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class Disaster : Attribute
     {
-        // This Auto-property is a disaster name of the Record.
-        public string Name { get; set; }
-
-        // This Auto-property is a disaster type of the Record.
-        public string Type { get; set; }
-
-        // This Auto-property is a duration of the Record.
-        public DateTime Duration { get; set; }
-
-        // This Auto-property is a affected area of the Record.
-        public string AffectedArea { get; set; }
-
+        private string name;
+        private string type;
+        private DateTime duration;
+        private string area;
+  
+        public Disaster(string nm, string tp, DateTime du, string ar)
+        {
+            this.name = nm;
+            this.type = tp;
+            this.duration = du;
+            this.area = ar;
+        }
+        public Disaster(string nm, string tp, string ar)
+        {
+            this.name = nm;
+            this.type = tp;
+            this.area = ar;
+        }
+        public Disaster(){}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value; 
+            }
+        }
+        public DateTime Duration
+        {
+            get
+            {
+                return duration;
+            }
+        }
+        public string AffectedArea
+        {
+            get
+            {
+                return area;
+            }
+        }
     }
 }

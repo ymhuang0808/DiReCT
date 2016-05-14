@@ -5,13 +5,38 @@ using System.Text;
 
 namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata
 {
-    public class Recorder
+    [AttributeUsage(AttributeTargets.All,AllowMultiple =true)]
+    public class Recorder : Attribute
     {
-        // This Auto-property is a recorder name of the Record.
-        public string Name { get; set; }
-
-        // This Auto-property is a recorder's organization of the Record.
-        public string Organization { get; set; }
-
-     }
+        private string name;
+        private string organization;
+        public Recorder(string nm, string org)
+        {
+            this.name = nm;
+            this.organization = org;
+        }
+        public Recorder(string nm)
+        {
+            this.name = nm;
+        }
+        public Recorder() { }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public string Organization
+        {
+            get
+            {
+                return organization;
+            }
+        }
+    }
 }
