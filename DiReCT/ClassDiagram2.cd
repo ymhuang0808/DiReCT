@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.AdditionInfo" Collapsed="true">
+  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.AdditionInfo">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAAAAA=</HashCode>
@@ -10,26 +10,26 @@
   <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.Device">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectModel\Metadata\Device.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.Disaster" Collapsed="true">
+  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.Disaster">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAACAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACIAAAACAAAAAAAAAAQAAAAFAAAAAQAAAAAAAAE=</HashCode>
       <FileName>ObjectModel\Metadata\Disaster.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.Recorder">
-    <Position X="9.25" Y="1.5" Width="1.5" />
+    <Position X="9.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAgAAAAIAA=</HashCode>
       <FileName>ObjectModel\Metadata\Recorder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.Reference">
-    <Position X="11" Y="1.5" Width="1.5" />
+  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.Reference" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectModel\Metadata\Reference.cs</FileName>
@@ -63,11 +63,18 @@
       <FileName>ObjectModel\Observations\Record.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiReCT.MainClass" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+  <Class Name="DiReCT.MainClass">
+    <Position X="12.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata.DeviceAttribute" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Metadata\Device.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft JhengHei UI" Size="9" />

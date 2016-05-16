@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +18,8 @@ namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata
             private set;
         }
     }
+
+
     [Device("Ipad Air 2")]
     public class Device
     {

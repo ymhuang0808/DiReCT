@@ -12,8 +12,22 @@ namespace DiReCT
 		public static void Main (string[] args)
 		{
             
-            
-            
+            // get the information and use it to
+            // retrieve the custom attributes
+            System.Reflection.MemberInfo info = typeof(Device);
+            object[] attributes;
+            attributes = info.GetCustomAttributes(typeof(DeviceAttribute), false);
+
+            // iterate through the attributes, retrieving the
+            // properties
+            foreach (object attribute in attributes)
+            {
+                DeviceAttribute dvc = (DeviceAttribute)attribute;
+                Console.WriteLine("Device: {0}", dvc.ID);
+            }
+
+
+            /*
             DateTime now = DateTime.Now;
 
             Disaster disaster = new Disaster();
@@ -35,7 +49,7 @@ namespace DiReCT
 
             Console.WriteLine ("Call fire.UID    => {0}", fireRecord.UID);
             Console.ReadLine();
-            
+            */
         }
 
 	}
