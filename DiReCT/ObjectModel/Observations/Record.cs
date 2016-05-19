@@ -1,13 +1,12 @@
 ﻿/**
  * 
- * ObservationDataRecord.cs is the abstract class for "Record" in the DiReCT.ObjectModel.Observations
- * project. 
+ * ObservationRecord.cs is the abstract class for "Observation Record" in the DiReCT project. 
  * 
  * Copyright (c) 2016 DRBoaST
  * 
  * Project Name:
  * 
- * 		DiReCT.ObjectModel.Observations(Disaster Record Capture Tool)
+ * 		DiReCT(Disaster Record Capture Tool)
  * 
  * Version:
  * 
@@ -15,12 +14,13 @@
  * 
  * File Name:
  * 
- * 		ObservationDataRecord.cs
+ * 		ObservationRecord.cs
  * 
  * Abstract:
  * 
- * 		ObservationDataRecord is a core data structrue, 
- * 		it is designed to interact with other states and flows.
+ * 		ObservationRecord is a core data structrue in DiRecT, 
+ * 		it provides members for data captured by time stamped,
+ * 		location stamped.,etc. 
  * 
  * Authors:
  * 
@@ -34,17 +34,18 @@
  * Major Revisions:
  * 	
  * 		2016/4/20: Add a member "UID"
- * 		2016/4/27: 
+ * 		2016/5/19: Re-Design Data Structure based on Jane's suggestions. 
  * 
  */
 
 using System;
+using System.Collections.Generic;
 using DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT.ObjectModel.Observations
+namespace DiReCT.ObjectModel
 {
 
-    public abstract class Record
+    public abstract class ObservationRecord
     {
 
         // This Auto-property is a identifier of the Record.
@@ -52,47 +53,22 @@ namespace DiReCT.ObjectModel.Observations
         // disaster name, recorder name, time and date, and so on.
         public string UID { get; protected set; }
 
-        // This Auto-property is a record time of the Record.
-        public string RecordTime { get; set; }
+        public List<DateTime> TimeStamp { get; set; }
 
-        // This Location object is a Struct(value-type) object
-        // It contains longitude, Latitude and Altitude members.
-        public struct Location
-        {
-            public double Longitude { get; set; }
+        public List<Boolean> Outlier { get; set; }
 
-            public double Latitude { get; set; }
+        // To-Do: Built-In Methods
 
-            public double Altitude { get; set; }
-        }
-
-        // Pointer to MetadataRecord
-        public MRecord MRecord;
-
-        // Pointer to MetadataRecorder
-
-        public MRecorder MRecorder;
-
-        public class Observations
-        {
-            // To-Do 
-        }
+        // To-Do: Links to audio & video     
 
         // This function is used to combine the UID.
         public void SetUID()
         {
-            this.UID = MRecord.DisasterType + "-" + MRecord.DisasterName + "-" + MRecorder.Name + "-" + this.RecordTime;
+            // this.UID = eventname + eventtype + recordername + Timestamp
 
         }
 
-        public Record(
-            MRecord MRecord,
-            MRecorder MRecorder
-            )
-        {
-            this.MRecord = MRecord;
-            this.MRecorder = MRecorder;
-        }
+      
 
     }
 }

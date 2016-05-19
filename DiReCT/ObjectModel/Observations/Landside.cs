@@ -40,32 +40,15 @@
 using System;
 using DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT.ObjectModel.Observations
+namespace DiReCT.ObjectModel
 {
-    public class Landside : Record
+    public class Landside : ObservationRecord
     {
         //Constrants
         public const string disasterType = "Landside";
 
         // Public constructor.
-        public Landside(
-          string disasterName,
-          string recorderName,
-          string recordTime,
-          MRecord MRecord,
-          MRecorder MRecorder
-          ) : base(
-                MRecord,
-                MRecorder)
-        {
-            MRecord.DisasterName = disasterName;
-            MRecord.DisasterType = disasterType;
-            MRecorder.Name = recorderName;
-            this.RecordTime = recordTime;
 
-            SetUID();
-
-        }
 
 
     }

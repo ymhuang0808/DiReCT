@@ -39,32 +39,15 @@
 using System;
 using DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT.ObjectModel.Observations
+namespace DiReCT.ObjectModel
 {
-    public class Flood : Record
+    public class Flood : ObservationRecord
     {
         //Constrants
         public const string disasterType = "Flood";
 
         // Public constructor.
-        public Flood(
-           string disasterName,
-           string recorderName,
-           string recordTime,
-           MRecord MRecord,
-           MRecorder MRecorder
-           ) : base(
-                MRecord,
-                MRecorder)
-        {
-            MRecord.DisasterName = disasterName;
-            MRecord.DisasterType = disasterType;
-            MRecorder.Name = recorderName;
-            this.RecordTime = recordTime;
-
-            SetUID();
-
-        }
+        
 
 
     }
