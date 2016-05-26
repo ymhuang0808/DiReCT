@@ -16,7 +16,7 @@
  * Abstract:
  * 
  * 		ObservationRecord is a abstract class which contains all mutual observation record.
- /////////* 		This class will be inherited by others subclass.
+ * 		This class will not implement and will be inherited by others subclass. 
  * 
  * Authors:
  * 
