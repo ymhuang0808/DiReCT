@@ -9,7 +9,6 @@ namespace DiReCT.ObjectModel
 		public const string disasterType = "Landslide";
 
         // Public constructor.
-        // Public constructor.
         public LandslideRecord(
             string eventName,
             string eventType,
