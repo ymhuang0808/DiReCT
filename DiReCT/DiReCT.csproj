@@ -35,17 +35,13 @@
     <Reference Include="System.Device" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObjectModel\Metadata\AdditionInfo.cs" />
-    <Compile Include="ObjectModel\Metadata\Device.cs" />
-    <Compile Include="ObjectModel\Metadata\Disaster.cs" />
-    <Compile Include="ObjectModel\Metadata\Reference.cs" />
-    <Compile Include="ObjectModel\Metadata\Recorder.cs" />
+    <Compile Include="ObjectModel\FireRecord.cs" />
+    <Compile Include="ObjectModel\FloodRecord.cs" />
+    <Compile Include="ObjectModel\IQuailityControl.cs" />
+    <Compile Include="ObjectModel\LandslideRecord.cs" />
+    <Compile Include="ObjectModel\ObservationRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ObjectModel\Observations\Record.cs" />
-    <Compile Include="ObjectModel\Observations\Landslide.cs" />
-    <Compile Include="ObjectModel\Observations\Flood.cs" />
-    <Compile Include="ObjectModel\Observations\Fire.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

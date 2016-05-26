@@ -2,10 +2,8 @@
 using System.Device.Location;
 using System.Diagnostics;
 
-using DRBoaST.DiSRC.DiReCT.ObjectModel.Observations;
-using DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata;
 
-namespace DiReCT
+namespace DiReCT.ObjectModel
 {
 	class MainClass
 	{
@@ -13,15 +11,9 @@ namespace DiReCT
 		{
             DateTime now = DateTime.Now;
 
-            Disaster disaster = new Disaster();
-            Recorder recorder = new Recorder();
-
-            disaster.Type = "Fire";
-            disaster.Name = "TaipeiStation";
-
-            recorder.Name = "Jeff";
-
-            Fire fireRecord = new Fire(disaster, recorder, now);
+            ObservationRecord fireRecord = new FireRecord("Nangkang village","fire","jeff",now);
+            
+          
 
             /*
             GeoCoordinate location = new GeoCoordinate();

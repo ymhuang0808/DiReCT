@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DRBoaST.DiSRC.DiReCT.ObjectModel.Metadata
+namespace DiReCT.ObjectModel
 {
     public class Disaster
     {
