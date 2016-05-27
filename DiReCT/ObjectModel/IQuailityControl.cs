@@ -15,7 +15,7 @@
         }
         */
 
-        // Branch depending on wheter data is true or false.
+        // Branch depending on whether data is true or false.
 
     }
 }
