@@ -1,7 +1,4 @@
 ﻿/**
- * 
- * ObservationRecord.cs is the abstract class for "Observation Record" in the DiReCT project. 
- * 
  * Copyright (c) 2016 DRBoaST
  * 
  * Project Name:
@@ -40,32 +37,68 @@
 
 using System;
 using System.Collections.Generic;
-using DiReCT.ObjectModel.Metadata;
+using System.Device.Location;
 
 namespace DiReCT.ObjectModel
 {
 
     public abstract class ObservationRecord
     {
-
-        // This Auto-property is a identifier of the Record.
-        // It is a combination of identifiers of disaster type,
-        // disaster name, recorder name, time and date, and so on.
+        //
+        // This Auto-property is a identifier of the ObservationRecord.
+        //
         public string UID { get; protected set; }
 
+
+        //
+        // This List is for storing sequence time stamps.
+        //
         public List<DateTime> TimeStamp { get; set; }
 
+
+        //
+        // This List is for storing multiple Outliers.
+        //
         public List<Boolean> Outlier { get; set; }
 
-        // To-Do: Built-In Methods
+
+        //
+        // This Auto-property is for storing the name of the event.
+        //
+        public string EventName { get; set; }
+
+
+        //
+        // This Auto-property is for storing the type of the event.
+        //
+        public string EventType { get; protected set; }
+
+
+        //
+        // This List is for storing sequence location stamps.
+        //
+        public List<GeoCoordinate> LocationStamp { get; set; }
+
+
+        public DeviceInfo DeviceInfo { get; set; }
+
+        public RecorderInfo RecorderInfo { get; set; }
+
 
         // To-Do: Links to audio & video     
+
 
         // This function is used to combine the UID.
         public void SetUID()
         {
-            // this.UID = eventname + eventtype + recordername + Timestamp
-
+            if (this.UID == null)
+            {
+                this.UID = EventType + EventName + TimeStamp;
+            }
+            else
+            {
+                Console.WriteLine("Already has a UID");
+            }
         }
 
       

@@ -1,6 +1,6 @@
 ﻿/**
  *
- * FireRecord.cs is the class for "Fire Record" in the DiReCT.ObjectModel.Observations
+ * LandsideRecord.cs is the class for "Landside Record" in the DiReCT.ObjectModel.Observations
  * project.
  *
  * Copyright (c) 2016 DRBoaST
@@ -15,11 +15,11 @@
  *
  * File Name:
  *
- * 		FireRecord.cs
+ * 		LandsideRecord.cs
  *
  * Abstract:
  *
- * 		FireRecord is fire model and part of core data strcture,
+ * 		LandsideRecord is fire model and part of core data strcture,
  * 		it is designed to interact with other states and flows.
  *
  * Authors:
@@ -38,17 +38,18 @@
  */
 
 using System;
-using DiReCT.ObjectModel.Metadata;
+using DiReCT.ObjectModel;
 
 namespace DiReCT.ObjectModel
 {
-    public class Fire : ObservationRecord
+    public class LandsideRecord : ObservationRecord
     {
         //Constrants
-        public const string disasterType = "Fire";
+        public const string disasterType = "Landside";
 
         // Public constructor.
-        
+
+
 
     }
 }

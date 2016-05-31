@@ -37,16 +37,22 @@
  *
  */
 using System;
-using DiReCT.ObjectModel.Metadata;
+using DiReCT.ObjectModel;
 
 namespace DiReCT.ObjectModel
 {
-    public class Flood : ObservationRecord
+    public class FloodRecord : ObservationRecord
     {
         //Constrants
         public const string disasterType = "Flood";
 
         // Public constructor.
+        public FloodRecord(
+            
+            )
+        {
+            this.EventType = "Flood";
+        }
         
 
 
