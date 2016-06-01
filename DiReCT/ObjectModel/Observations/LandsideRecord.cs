@@ -38,17 +38,24 @@
  */
 
 using System;
-using DiReCT.ObjectModel;
+using System.Collections.Generic;
 
 namespace DiReCT.ObjectModel
 {
     public class LandsideRecord : ObservationRecord
     {
-        //Constrants
-        public const string disasterType = "Landside";
 
-        // Public constructor.
-
+        // Constructor.
+        public LandsideRecord(
+            DeviceInfo DeviceInfo,
+            RecorderInfo RecorderInfo
+            ) : base(
+                DeviceInfo,
+                RecorderInfo
+                )
+        {
+            this.EventType = "Landside";
+        }
 
 
     }

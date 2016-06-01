@@ -39,6 +39,7 @@ using System;
 using System.Collections.Generic;
 using System.Device.Location;
 
+
 namespace DiReCT.ObjectModel
 {
 
@@ -51,15 +52,21 @@ namespace DiReCT.ObjectModel
 
 
         //
-        // This List is for storing sequence time stamps.
+        // This Auto-property is for storing sequence time stamps.
         //
-        public List<DateTime> TimeStamp { get; set; }
+        public DateTime TimeStamp { get; set; }
 
 
         //
-        // This List is for storing multiple Outliers.
+        // This Auto-property is for storing posible reason of the damage.
         //
-        public List<Boolean> Outlier { get; set; }
+        public string Reason { get; set; }
+
+
+        //
+        // This Auto-property is for storing multiple Outliers.
+        //
+        public Boolean Outlier { get; set; }
 
 
         //
@@ -75,14 +82,19 @@ namespace DiReCT.ObjectModel
 
 
         //
-        // This List is for storing sequence location stamps.
+        // This Auto-property is for storing sequence location stamps.
         //
-        public List<GeoCoordinate> LocationStamp { get; set; }
+        public GeoCoordinate LocationStamp { get; set; }
 
+        //
+        // Declaring DeviceInfo to reference
+        //
+        public DeviceInfo DeviceInfo;
 
-        public DeviceInfo DeviceInfo { get; set; }
-
-        public RecorderInfo RecorderInfo { get; set; }
+        //
+        // Declaring RecorderInfo to reference
+        //
+        public RecorderInfo RecorderInfo;
 
 
         // To-Do: Links to audio & video     
@@ -93,7 +105,7 @@ namespace DiReCT.ObjectModel
         {
             if (this.UID == null)
             {
-                this.UID = EventType + EventName + TimeStamp;
+                this.UID = EventType + "-" + EventName + "-" + TimeStamp.ToString("yyyyMMddHHmmss");
             }
             else
             {
@@ -101,7 +113,26 @@ namespace DiReCT.ObjectModel
             }
         }
 
-      
+        /// <summary>
+        /// Assign values of parameters to observation data structure.
+        /// 
+        /// This constructor will be called by sub-class
+        /// (for example, FireRecord, Floodrecord...)
+        /// 
+        /// @param DeviceInfo   - pointer to DeviceInfo
+        /// @param RecorderInfo - pointer to RecorderInfo
+        /// 
+        /// </summary>
+        public ObservationRecord(
+            DeviceInfo DeviceInfo,
+            RecorderInfo RecorderInfo
+
+            )
+        {
+            this.DeviceInfo = DeviceInfo;
+            this.RecorderInfo = RecorderInfo;
+            
+        }
 
     }
 }

@@ -11,7 +11,7 @@ namespace DiReCT.ObjectModel
         //
         // This Auto-property is a device model of the  ObservationRecord.
         //
-        public string DeviceModel { get; set; }
+        public string DeviceModelNumber { get; set; }
 
 
         //
@@ -20,10 +20,6 @@ namespace DiReCT.ObjectModel
         public string DeviceIMEI { get; set; }
 
 
-        //
-        // This Auto-property is a device Serial Number of the  ObservationRecord.
-        //
-        public string DeviceSerialNumber { get; set; }
 
     }
 }

@@ -37,23 +37,27 @@
  *
  */
 using System;
-using DiReCT.ObjectModel;
+using System.Collections.Generic;
 
 namespace DiReCT.ObjectModel
 {
     public class FloodRecord : ObservationRecord
     {
-        //Constrants
-        public const string disasterType = "Flood";
+        public int WaterDepth { get; set; }
 
-        // Public constructor.
+        // Constructor.
         public FloodRecord(
-            
-            )
+            DeviceInfo DeviceInfo,
+            RecorderInfo RecorderInfo
+            ) : base(
+                DeviceInfo,
+                RecorderInfo
+                )
         {
             this.EventType = "Flood";
         }
-        
+
+
 
 
     }

@@ -36,19 +36,25 @@
  * 		2016/4/20: Add a constructor
  *
  */
-
 using System;
-using DiReCT.ObjectModel;
+using System.Collections.Generic;
+
 
 namespace DiReCT.ObjectModel
 {
     public class FireRecord : ObservationRecord
     {
-        //Constrants
-        public const string disasterType = "Fire";
-
-        // Public constructor.
-        
+        // Constructor.
+        public FireRecord(
+            DeviceInfo DeviceInfo,
+            RecorderInfo RecorderInfo
+            ) : base(
+                DeviceInfo,
+                RecorderInfo
+                )
+        {
+            this.EventType = "Fire";
+        }
 
     }
 }

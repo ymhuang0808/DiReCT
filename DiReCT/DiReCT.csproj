@@ -37,12 +37,17 @@
     <Compile Include="ObjectModel\MetaData\DeviceInfo.cs" />
     <Compile Include="ObjectModel\IQualityControl.cs" />
     <Compile Include="ObjectModel\MetaData\RecorderInfo.cs" />
+    <Compile Include="ObjectModel\Observations\CasualtiesRecord.cs" />
+    <Compile Include="ObjectModel\Observations\DestroyObjectRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ObjectModel\Observations\ObservationRecord.cs" />
     <Compile Include="ObjectModel\Observations\LandsideRecord.cs" />
     <Compile Include="ObjectModel\Observations\FloodRecord.cs" />
     <Compile Include="ObjectModel\Observations\FireRecord.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
