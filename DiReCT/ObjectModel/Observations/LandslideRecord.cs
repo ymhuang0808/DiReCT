@@ -11,11 +11,12 @@
  *
  * File Name:
  *
- * 		FireRecord.cs
+ * 		LandslideRecord.cs
  *
  * Abstract:
  *
- * 		FireRecord is a subclass inherited from ObservationRecord.	
+ * 		LandslideRecord is a subclass inherited from ObservationRecord.
+ * 		
  *
  * Authors:
  *
@@ -33,10 +34,13 @@
  * 
  */
 
+
 namespace DiReCT.ObjectModel
 {
-    public class FireRecord : ObservationRecord
+
+    public class LandslideRecord : ObservationRecord
     {
+
 
     }
 }

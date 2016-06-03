@@ -1,13 +1,9 @@
 ﻿/**
- *
- * FloodRecord.cs is the class for "Flood Record" in the DiReCT.ObjectModel.Observations
- * project.
- *
  * Copyright (c) 2016 DRBoaST
  *
  * Project Name:
  *
- * 		DiReCT.ObjectModel.Observations(Disaster Record Capture Tool)
+ * 		DiReCT(Disaster Record Capture Tool)
  *
  * Version:
  *
@@ -19,12 +15,13 @@
  *
  * Abstract:
  *
- * 		FloodRecord is fire model and part of core data strcture,
- * 		it is designed to interact with other states and flows.
+ * 		FloodRecord is a subclass inherited from ObservationRecord.
+ * 		
  *
  * Authors:
  *
  * 		Johnson Su, johnsonsu@iis.sinica.edu.tw
+ *      Jeff Chen, jeff@iis.sinica.edu.tw
  *
  * License:
  *
@@ -32,32 +29,17 @@
  * 		in file 'COPYING.txt', which is part of this source code package.
  *
  * Major Revisions:
- *
- * 		2016/4/20: Add a constructor
- *
+ * 		
+ * 		2016/06/01: add constructor. 
+ * 
  */
-using System;
-using System.Collections.Generic;
+
 
 namespace DiReCT.ObjectModel
 {
     public class FloodRecord : ObservationRecord
     {
         public int WaterDepth { get; set; }
-
-        // Constructor.
-        public FloodRecord(
-            DeviceInfo DeviceInfo,
-            RecorderInfo RecorderInfo
-            ) : base(
-                DeviceInfo,
-                RecorderInfo
-                )
-        {
-            this.EventType = "Flood";
-        }
-
-
 
 
     }

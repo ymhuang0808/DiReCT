@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -7,7 +7,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>DiReCT</RootNamespace>
     <AssemblyName>DiReCT</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,16 +39,16 @@
     <Compile Include="ObjectModel\IQualityControl.cs" />
     <Compile Include="ObjectModel\MetaData\RecorderInfo.cs" />
     <Compile Include="ObjectModel\Observations\CasualtiesRecord.cs" />
-    <Compile Include="ObjectModel\Observations\DestroyObjectRecord.cs" />
+    <Compile Include="ObjectModel\Observations\DestroyedObjectRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ObjectModel\Observations\ObservationRecord.cs" />
-    <Compile Include="ObjectModel\Observations\LandsideRecord.cs" />
+    <Compile Include="ObjectModel\Observations\LandslideRecord.cs" />
     <Compile Include="ObjectModel\Observations\FloodRecord.cs" />
     <Compile Include="ObjectModel\Observations\FireRecord.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

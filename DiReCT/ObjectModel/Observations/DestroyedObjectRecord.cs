@@ -11,12 +11,12 @@
  *
  * File Name:
  *
- * 		CasualtiesRecord.cs
+ * 		DestroyedObjectRecord.cs
  *
  * Abstract:
  *
- * 		CasualtiesRecord is a subclass inherited from ObservationRecord.
- *      It provides members for data captured such as death toll, injuries, etc.
+ * 		DestroyObjectRecord  is a subclass inherited from ObservationRecord.
+ *      It provides members for data captured such as destroyed houses, destroyed roads, etc.
  * 		
  *
  * Authors:
@@ -32,29 +32,24 @@
  * Major Revisions:
  * 	
  * 		2016/06/01: add properties. 
- * 
  */
 
 namespace DiReCT.ObjectModel
 {
-    public class CasualtiesRecord : ObservationRecord
+    class DestroyedObjectRecord : ObservationRecord
     {
         /// <summary>
-        /// This Auto-property is for accessing number of death toll.
+        ///  This Auto-property is for storing the number of destroyed houses.
         /// </summary>
-        public int DeathToll { get; set; }
+        public int DestroyedHouses { get; set; }
+
 
         /// <summary>
-        /// This Auto-property is for accessing number of injuries.
+        ///  This Auto-property is for storing the number of destroyed roads.
         /// </summary>
-        public int Injuries { get; set; }
-
-        /// <summary>
-        /// This Auto-property is for accessing number of missing people.
-        /// </summary>
-        public int MissingPeople { get; set; }
+        public int Destroyedroads { get; set; }
 
 
-        
+
     }
 }
