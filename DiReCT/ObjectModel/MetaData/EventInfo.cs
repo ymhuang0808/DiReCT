@@ -11,12 +11,13 @@
  *
  * File Name:
  *
- * 		RecorderInfo.cs
+ * 		EventInfo.cs
  *
  * Abstract:
  *
- *      RecorderInfo class is the model of observation record metadata.
- *      It contains members to store recorder information.
+ *      EventInfo.cs is a abstract class which is the model of 
+ *      observation record metadata.
+ *      It contains members to store event information.
  * 		
  *
  * Authors:
@@ -34,55 +35,39 @@ using System.Collections.Generic;
 
 namespace DiReCT.ObjectModel
 {
-    public class RecorderInfo
+    public class EventInfo
     {
-
         /// <summary>
         /// This property is for accessing value of UID.
         /// The UID is a identifier of the EventInfo.
         /// </summary>
         public string UID { get; set; }
 
-
         /// <summary>
-        /// This Auto-property is for accessing value of recorder name.
+        /// This Auto-property is for accessing value of event name.
         /// </summary>
         public string Name { get; set; }
 
 
         /// <summary>
-        /// This Auto-property is for accessing value of recorder organization.
+        /// This Auto-property is for accessing value of event type.
         /// </summary>
-        public string Organization { get; set; }
-
-
-        /// <summary>
-        /// This Auto-property is for accessing value of recorder phone number.
-        /// </summary>
-        public string PhoneNumber { get; set; }
-
-
-        /// <summary>
-        /// This Auto-property is for accessing value of recorder e-mail.
-        /// </summary>
-        public string Email { get; set; }
+        public string Type { get; set; }
 
 
         /// <summary>
         /// This SortedList data structure is for storing 
         /// the pointers to ObservationRecords.
         /// </summary>
-        public Dictionary<string, ObservationRecord> ObservationList
+        public SortedList<string, ObservationRecord> ObservationList 
             = new Dictionary<string, ObservationRecord>();
 
 
         /// <summary>
         /// This SortedList data structure is for storing 
-        /// the pointers to EventInfos.
-        /// /// </summary>
-        public Dictionary<string, EventInfo> EventList
-            = new Dictionary<string, EventInfo>();
-
-
+        /// the pointers to RecorderInfos.
+        /// </summary>
+        public SortedList<string, RecorderInfo> RecorderList 
+            = new Dictionary<string, RecorderInfo>();
     }
 }

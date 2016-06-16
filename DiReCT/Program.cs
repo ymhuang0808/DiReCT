@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Device.Location;
 using System.Collections.Generic;
+using System.Collections;
 using DiReCT.ObjectModel;
 
 
 namespace DiReCT
 {
-	class MainClass
-	{
+    class MainClass
+    {
         /// <summary>
         /// 
         /// In this example, we use flood scenario to illustrate 
@@ -15,84 +17,93 @@ namespace DiReCT
         /// 
         /// </summary>
         /// <param name="args"></param>
-		public static void Main (string[] args)
-		{
-            // create a instance of DeviceInfo
-            //DeviceInfo deviceInfo = new DeviceInfo();
+		public static void Main(string[] args)
+        {
+            Stopwatch timer = new Stopwatch();
 
-            // create a instance of DeviceInfo
-            RecorderInfo recorderInfo = new RecorderInfo();
+            List<int> randomList = new List<int>();
 
-            Dictionary<string, string> testRecord = new Dictionary<string, string>();
-
-            recorderInfo.Records = testRecord;
-
-            recorderInfo.Records.Add("asdf", "asdf");
-
-            recorderInfo.Records2.Add("asdfg", "asdfg");
+            timer.Reset();
+            timer.Start();
+            // Create a Event object
+            EventInfo eventInfo = new EventInfo();
+            eventInfo.Name = "莫拉颱風";
+            eventInfo.Type = "typhoon";
+            Console.WriteLine("Spending Time of creating a EventInfo object: {0} ticks ({1} msec)", timer.ElapsedTicks, timer.ElapsedMilliseconds);
 
 
-            Console.WriteLine(recorderInfo.Records.ToString());
+            timer.Reset();
+            timer.Start();
+            // Create a Dictionary for 300 recorders
+            Dictionary<string, RecorderInfo> RIDictionary = new Dictionary<string, RecorderInfo>();
+            {
+                for (int index = 0; index < 300; index++)
+                {
+                    RecorderInfo recorder = new RecorderInfo();
+
+                    recorder.UID = index.ToString();
+                    recorder.Name = string.Format("Recorder{0:D6}", index);
+                    recorder.PhoneNumber = string.Format("0988-{0:D6}", index);
+
+                    if (index < 150)
+                    {
+                        recorder.Organization = "IIS";
+                    }
+                    else
+                    {
+                        recorder.Organization = "CITI";
+                    }
+
+                    RIDictionary.Add(recorder.UID, recorder);
+                }
+            }
+            Console.WriteLine("Spending Time of creating a RIDictionary: {0} ticks ({1} msec)", timer.ElapsedTicks, timer.ElapsedMilliseconds);
+
+
+            timer.Reset();
+            timer.Start();
+            // Create a Dictionary for 5000000 ObservationRecords
+            Dictionary<string, ObservationRecord> ORDictionary = new Dictionary<string, ObservationRecord>();
+            {
+                for (int index = 0; index < 50; index++)
+                {
+                    CasualtiesRecord casualties = new CasualtiesRecord();
+
+                    casualties.UID = eventInfo.Type
+                        + "-" + eventInfo.Name
+                        //+ "-" + DateTime.Now.ToString("yyyyMMddHHmmss")
+                        + "-" + index;
+                    casualties.TimeStamp = DateTime.UtcNow;
+                    casualties.LocationStamp = new GeoCoordinate();
+
+                    casualties.DeathToll = index;
+                    casualties.Injuries = index;
+                    casualties.MissingPeople = index;
+
+                    // Add a record to ORDicionary
+                    ORDictionary.Add(casualties.UID, casualties);
+
+                    // Add a reference to some recorder
+                    RIDictionary["0"].ObservationList.Add(casualties.UID, casualties);
+                }
+            }
+            Console.WriteLine("Spending Time of creating a ORDictionary: {0} ticks ({1} msec)", timer.ElapsedTicks, timer.ElapsedMilliseconds);
+            Console.WriteLine("Using Memory: {0}MB", Environment.WorkingSet / 1000000);
+
+            var result = RIDictionary["0"].ObservationList.Count;
+            Console.WriteLine(result);
+
+            //timer.Reset();
+            //timer.Start();
+            //// Find UID in ORDictionary
+            //string findUID = eventInfo.Type + "-" + eventInfo.Name + "-" + "4560";
+
+            //ObservationRecord result = ORs[findUID];
+            //Console.WriteLine("Spending Time of searching a UID: {0} ticks ({1} msec)", timer.ElapsedTicks, timer.ElapsedMilliseconds);
             Console.ReadLine();
-
-            //// create a instance of FloodRecord
-            //FloodRecord flood = new FloodRecord(deviceInfo, recorderInfo);
-
-            //// adding event name to flood record
-            //flood.EventName = "莫拉颱風";
-
-            //// adding device information to flood record
-            //flood.DeviceInfo.DeviceIMEI = "357631050052050";
-            //flood.DeviceInfo.DeviceModelNumber = "Surface Pro 4";
-
-            //// adding recorder information to flood record
-            //flood.RecorderInfo.Name = "Johnson";
-            //flood.RecorderInfo.Organization = "竹崎鄉公所";
-            //flood.RecorderInfo.PhoneNumber = "0988555444";
-
-            //// add the possible reason to flood record
-            //flood.Reason = "河堤倒灌";
-
-            //// adding a coordiate to flood record
-            //flood.LocationStamp = new GeoCoordinate(23.525708, 120.552750); 
-
-            //// adding the current time stamp to flood record
-            //flood.TimeStamp = DateTime.UtcNow;
-
-            //// generate the UID of flood record 
-            //flood.SetUID();
-
-            //// instance a Dictionary Data Structure for storing observation records
-            //Dictionary<string, ObservationRecord> floodRecordItems = new Dictionary<string, ObservationRecord>();
-
-            //// add a flood record to Dictionary
-            //floodRecordItems.Add(flood.UID, flood);
-
-            //// printing all properties of the flood record from dictionary  
-            //foreach (var index in floodRecordItems )
-            //{
-            //    Console.WriteLine("{0}, {1}", index.Key, index.Value);
-
-            //    Console.WriteLine("LocationStamp.Latitude: {0}", index.Value.LocationStamp.Latitude);
-            //    Console.WriteLine("LocationStamp.Longitude: {0}", index.Value.LocationStamp.Longitude);
-            //    Console.WriteLine("TimeStamp: {0}", index.Value.TimeStamp);
-
-            //    Console.WriteLine("Reason: {0}", index.Value.Reason);
-            //    Console.WriteLine("Outlier: {0}", index.Value.Outlier);
-
-            //    Console.WriteLine("EventName: {0}", index.Value.EventName);
-            //    Console.WriteLine("EventType: {0}", index.Value.EventType);
-
-            //    Console.WriteLine("RecorderName: {0}", index.Value.RecorderInfo.Name);
-            //    Console.WriteLine("RecorderPhoneNumber: {0}", index.Value.RecorderInfo.PhoneNumber);
-
-            //    Console.WriteLine("DeviceIMEI: {0}", index.Value.DeviceInfo.DeviceIMEI);
-            //    Console.WriteLine("DeviceModelNumber: {0}", index.Value.DeviceInfo.DeviceModelNumber);
-
-
-            //}
-            //Console.ReadLine();
         }
 
-	}
+
+
+    }
 }

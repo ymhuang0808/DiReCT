@@ -29,10 +29,6 @@
  * 		GPL 3.0 This file is subject to the terms and conditions defined
  * 		in file 'COPYING.txt', which is part of this source code package.
  *
- * Major Revisions:
- * 	
- * 		2016/06/01: add properties. 
- * 
  */
 
 namespace DiReCT.ObjectModel

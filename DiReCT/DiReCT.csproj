@@ -37,8 +37,10 @@
   <ItemGroup>
     <Compile Include="ObjectModel\MetaData\DeviceInfo.cs" />
     <Compile Include="ObjectModel\IQualityControl.cs" />
+    <Compile Include="ObjectModel\MetaData\EventInfo.cs" />
     <Compile Include="ObjectModel\MetaData\RecorderInfo.cs" />
     <Compile Include="ObjectModel\Observations\CasualtiesRecord.cs" />
+    <Compile Include="ObjectModel\Observations\DebrisFlowRecord.cs" />
     <Compile Include="ObjectModel\Observations\DestroyedObjectRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
