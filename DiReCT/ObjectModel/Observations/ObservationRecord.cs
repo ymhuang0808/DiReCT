@@ -45,18 +45,16 @@ namespace DiReCT.ObjectModel
         /// </summary>
         public string UID { get; set; }
 
-
         /// <summary>
         /// This Auto-property is for accessing value of timestamp.
+        /// The time stamp means the date of filing a record.
         /// </summary>
         public DateTime TimeStamp { get; set; } = new DateTime();
-
 
         /// <summary>
         /// This Auto-property is for accessing value of location stamp.
         /// </summary>
         public GeoCoordinate LocationStamp { get; set; } = new GeoCoordinate();
-
 
         /// <summary>
         /// This Auto-property is for accessing value of outlier.
@@ -64,12 +62,20 @@ namespace DiReCT.ObjectModel
         /// </summary>
         public Boolean Outlier { get; set; } = false;
 
-
         /// <summary>
         /// This Auto-property is for accessing value of possible damage reason.
         /// </summary>
         public List<string> Reasons { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string RecorderUID { get; set; }
 
         ///
         /// To-Do: Links to audio & video.     

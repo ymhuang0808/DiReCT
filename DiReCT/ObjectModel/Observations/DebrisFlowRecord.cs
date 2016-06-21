@@ -41,12 +41,6 @@ namespace DiReCT.ObjectModel
         /// <summary>
         /// 
         /// </summary>
-        public string Description { get; set; }
-
-        
-        /// <summary>
-        /// 
-        /// </summary>
         public float CatchmentArea { get; set; }
 
         

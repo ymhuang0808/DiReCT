@@ -59,7 +59,7 @@ namespace DiReCT.ObjectModel
         /// This SortedList data structure is for storing 
         /// the pointers to ObservationRecords.
         /// </summary>
-        public SortedList<string, ObservationRecord> ObservationList 
+        public Dictionary<string, ObservationRecord> ObservationList 
             = new Dictionary<string, ObservationRecord>();
 
 
@@ -67,7 +67,7 @@ namespace DiReCT.ObjectModel
         /// This SortedList data structure is for storing 
         /// the pointers to RecorderInfos.
         /// </summary>
-        public SortedList<string, RecorderInfo> RecorderList 
+        public Dictionary<string, RecorderInfo> RecorderList 
             = new Dictionary<string, RecorderInfo>();
     }
 }
