@@ -54,7 +54,7 @@ namespace DiReCT.ObjectModel
         /// <summary>
         /// This Auto-property is for accessing value of location stamp.
         /// </summary>
-        public GeoCoordinate LocationStamp { get; set; } = new GeoCoordinate();
+        public virtual GeoCoordinate LocationStamp { get; set; } = new GeoCoordinate();
 
         /// <summary>
         /// This Auto-property is for accessing value of outlier.
@@ -65,7 +65,7 @@ namespace DiReCT.ObjectModel
         /// <summary>
         /// This Auto-property is for accessing value of possible damage reason.
         /// </summary>
-        public List<string> Reasons { get; set; }
+        public List<string> Reasons { get; set; } = new List<string>();
 
         /// <summary>
         /// 
@@ -77,9 +77,20 @@ namespace DiReCT.ObjectModel
         /// </summary>
         public string RecorderUID { get; set; }
 
-        ///
-        /// To-Do: Links to audio & video.     
-        ///
+        /// <summary>
+        /// 
+        /// </summary>
+        public Dictionary<string, string> VideoFilePaths { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Dictionary<string, string> AudioFilePaths { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Dictionary<string, string> PhotoFilePaths { get; set; }
 
     }
 }
